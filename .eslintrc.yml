@@ -1,0 +1,27 @@
+extends:
+  - airbnb-base
+  - prettier
+env:
+  jest: true
+plugins:
+  - prettier
+globals:
+  db: true
+  tableNames: true
+  salesforce: true
+rules:
+  prettier/prettier:
+    - error
+    - singleQuote: true
+      trailingComma: all
+      bracketSpacing: true
+      semi: false
+  semi: 0
+  no-param-reassign: 0
+  import/no-extraneous-dependencies: 0
+  import/extensions:
+    - off
+    - never
+settings:
+  flowtype:
+    onlyFilesWithFlowAnnotation: true
