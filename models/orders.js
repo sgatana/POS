@@ -1,29 +1,21 @@
 module.exports = (sequelize, DataTypes) => {
-  const products = sequelize.define(
-    'products',
+  const orders = sequelize.define(
+    'orders',
     {
-      id: {
-        unique: true,
+      productId: {
         type: DataTypes.STRING,
-        primaryKey: true,
+        title: 'product_id',
       },
-      name: {
+      unitCost: {
         type: DataTypes.STRING,
-      },
-      categoryId: {
-        type: DataTypes.STRING,
-        title: 'category_id',
+        title: 'unit_cost',
       },
       quantity: {
         type: DataTypes.INTEGER,
       },
-      productDescription: {
+      totalCost: {
         type: DataTypes.STRING,
-        title: 'product_description',
-      },
-      unitPrice: {
-        type: DataTypes.INTEGER,
-        title: 'unit_price',
+        title: 'total_cost',
       },
       createAt: {
         type: DataTypes.DATE,
@@ -35,11 +27,11 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: 'products',
+      tableName: 'orders',
     },
   )
-  // products.associate = function(models) {
+  // orders.associate = function(models) {
   //   // associations can be defined here
   // }
-  return products
+  return orders
 }

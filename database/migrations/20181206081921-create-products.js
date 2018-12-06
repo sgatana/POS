@@ -24,6 +24,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         title: 'unit_price',
       },
+      createdAt: {
+        type: Sequelize.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        field: 'updated_at',
+      },
     }),
   down: queryInterface => queryInterface.dropTable('products'),
 }
