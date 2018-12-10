@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       categoryId: {
         type: DataTypes.STRING,
-        title: 'category_id',
+        field: 'category_id',
       },
       createdAt: {
         type: DataTypes.DATE,

@@ -4,26 +4,26 @@ module.exports = (sequelize, DataTypes) => {
     {
       productId: {
         type: DataTypes.STRING,
-        title: 'product_id',
+        field: 'product_id',
       },
       unitCost: {
         type: DataTypes.STRING,
-        title: 'unit_cost',
+        field: 'unit_cost',
       },
       quantity: {
         type: DataTypes.INTEGER,
       },
       totalCost: {
         type: DataTypes.STRING,
-        title: 'total_cost',
+        field: 'total_cost',
       },
       createAt: {
         type: DataTypes.DATE,
-        title: 'created_at',
+        field: 'created_at',
       },
       updatedAt: {
         type: DataTypes.DATE,
-        title: 'updated_at',
+        field: 'updated_at',
       },
     },
     {

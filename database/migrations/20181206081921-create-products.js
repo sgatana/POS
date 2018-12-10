@@ -11,18 +11,22 @@ module.exports = {
       },
       categoryId: {
         type: Sequelize.STRING,
-        title: 'category_id',
+        field: 'category_id',
+        references: {
+          model: 'categories',
+          id: 'id',
+        },
       },
       quantity: {
         type: Sequelize.INTEGER,
       },
       productDescription: {
         type: Sequelize.STRING,
-        title: 'product_description',
+        field: 'product_description',
       },
       unitPrice: {
         type: Sequelize.INTEGER,
-        title: 'unit_price',
+        field: 'unit_price',
       },
       createdAt: {
         type: Sequelize.DATE,

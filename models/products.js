@@ -12,34 +12,41 @@ module.exports = (sequelize, DataTypes) => {
       },
       categoryId: {
         type: DataTypes.STRING,
-        title: 'category_id',
+        field: 'category_id',
       },
       quantity: {
         type: DataTypes.INTEGER,
       },
       productDescription: {
         type: DataTypes.STRING,
-        title: 'product_description',
+        field: 'product_description',
       },
       unitPrice: {
         type: DataTypes.INTEGER,
-        title: 'unit_price',
+        field: 'unit_price',
       },
       createAt: {
         type: DataTypes.DATE,
-        title: 'created_at',
+        field: 'created_at',
       },
       updatedAt: {
         type: DataTypes.DATE,
-        title: 'updated_at',
+        field: 'updated_at',
       },
     },
     {
       tableName: 'products',
     },
   )
-  // products.associate = function(models) {
-  //   // associations can be defined here
-  // }
+  products.associate = models => {
+    products.hasMany(models.orders, {
+      as: 'orders',
+      foreignKey: 'productId',
+    })
+    products.hasMany(models.purchases, {
+      as: 'purchases',
+      foreignKey: 'productId',
+    })
+  }
   return products
 }

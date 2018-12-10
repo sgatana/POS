@@ -3,26 +3,26 @@ module.exports = {
     queryInterface.createTable('orders', {
       productId: {
         type: Sequelize.STRING,
-        title: 'product_id',
+        field: 'product_id',
       },
       unitCost: {
         type: Sequelize.STRING,
-        title: 'unit_cost',
+        field: 'unit_cost',
       },
       quantity: {
         type: Sequelize.INTEGER,
       },
       totalCost: {
         type: Sequelize.STRING,
-        title: 'total_cost',
+        field: 'total_cost',
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE,
+        field: 'created_at',
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE,
+        field: 'updated_at',
       },
     }),
   down: queryInterface => queryInterface.dropTable('orders'),
