@@ -20,7 +20,7 @@ class categoryController {
     }
   }
 
-  static async getCategory(req, res) {
+  static async getProductByCategory(req, res) {
     try {
       const { id } = req.params
       const category = await categoryRepository.getCategory(id)

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         field: 'unit_price',
       },
-      createAt: {
+      createdAt: {
         type: DataTypes.DATE,
         field: 'created_at',
       },
