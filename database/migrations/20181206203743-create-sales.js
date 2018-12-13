@@ -1,9 +1,18 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('orders', {
+    queryInterface.createTable('sales', {
+      id: {
+        primaryKey: true,
+        unique: true,
+        type: Sequelize.STRING,
+      },
       productId: {
         type: Sequelize.STRING,
         field: 'product_id',
+        references: {
+          model: 'products',
+          id: 'id',
+        },
       },
       unitCost: {
         type: Sequelize.STRING,
@@ -24,6 +33,10 @@ module.exports = {
         type: Sequelize.DATE,
         field: 'updated_at',
       },
+      dateSold: {
+        type: Sequelize.DATE,
+        field: 'date_sold',
+      },
     }),
-  down: queryInterface => queryInterface.dropTable('orders'),
+  down: queryInterface => queryInterface.dropTable('sales'),
 }

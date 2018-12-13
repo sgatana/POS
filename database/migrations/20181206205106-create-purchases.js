@@ -12,9 +12,21 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER,
       },
-      categoryId: {
+      unitPrice: {
+        type: Sequelize.FLOAT,
+        field: 'unit_price',
+      },
+      totalPrice: {
+        type: Sequelize.FLOAT,
+        field: 'total_price',
+      },
+      productId: {
         type: Sequelize.STRING,
-        field: 'category_id',
+        field: 'product_id',
+        references: {
+          model: 'products',
+          id: 'id',
+        },
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -23,6 +35,10 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE,
         field: 'updated_at',
+      },
+      datePurchased: {
+        type: Sequelize.DATE,
+        field: 'date_purchased',
       },
     }),
   down: queryInterface => queryInterface.dropTable('purchases'),

@@ -25,7 +25,7 @@ module.exports = {
         field: 'product_description',
       },
       unitPrice: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         field: 'unit_price',
       },
       createdAt: {

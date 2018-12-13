@@ -11,5 +11,6 @@ router.get('/api/categories/:id', categoryController.getProductByCategory)
 router.get('/api/products', productController.fetchProducts)
 router.post('/api/products', productController.createProduct)
 router.post('/api/categories', categoryController.createCategory)
+router.put('/api/products/:id', productController.updateProduct)
 
 module.exports = router

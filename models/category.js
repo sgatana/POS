@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         field: 'updated_at',
       },
+      deleted: {
+        type: DataTypes.BOOLEAN,
+      },
     },
     {
       tableName: 'categories',

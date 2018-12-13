@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         field: 'product_description',
       },
       unitPrice: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         field: 'unit_price',
       },
       createdAt: {
@@ -33,14 +33,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         field: 'updated_at',
       },
+      deleted: {
+        type: DataTypes.BOOLEAN,
+      },
     },
     {
       tableName: 'products',
     },
   )
   products.associate = models => {
-    products.hasMany(models.orders, {
-      as: 'orders',
+    products.hasMany(models.sales, {
+      as: 'sales',
       foreignKey: 'productId',
     })
     products.hasMany(models.purchases, {

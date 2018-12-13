@@ -16,8 +16,19 @@ class productController {
       const products = await productRepository.fetchProducts()
       res.status(200).json({ products })
     } catch (error) {
-      console.log(error)
       res.status(error.status).json({ error: error.message })
+    }
+  }
+
+  static async updateProduct(req, res) {
+    try {
+      const { body, params } = req
+      const { id } = params
+      const payload = Object.assign({}, body)
+      await productRepository.updateProduct(id, payload)
+      res.status(200).json({ message: 'product updated successfully' })
+    } catch (error) {
+      res.status(403).json({ error: 'error' })
     }
   }
 }

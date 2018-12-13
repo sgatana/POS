@@ -1,7 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-  const orders = sequelize.define(
-    'orders',
+  const sales = sequelize.define(
+    'sales',
     {
+      id: {
+        unique: true,
+        type: DataTypes.STRING,
+        primaryKey: true,
+      },
       productId: {
         type: DataTypes.STRING,
         field: 'product_id',
@@ -25,13 +30,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         field: 'updated_at',
       },
+      dateSold: {
+        type: DataTypes.DATE,
+        field: 'date_sold',
+      },
+      deleted: {
+        type: DataTypes.BOOLEAN,
+      },
     },
     {
-      tableName: 'orders',
+      tableName: 'sales',
     },
   )
-  // orders.associate = function(models) {
+  // sales.associate = function(models) {
   //   // associations can be defined here
   // }
-  return orders
+  return sales
 }

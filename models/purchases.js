@@ -13,7 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       quantity: {
         type: DataTypes.INTEGER,
       },
-      categoryId: {
+      unitPrice: {
+        type: DataTypes.FLOAT,
+        field: 'unit_price',
+      },
+      totalPrice: {
+        type: DataTypes.FLOAT,
+        field: 'total_price',
+      },
+      productId: {
         type: DataTypes.STRING,
         field: 'category_id',
       },
@@ -24,6 +32,13 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: {
         type: DataTypes.DATE,
         field: 'updated_at',
+      },
+      datePurchased: {
+        type: DataTypes.DATE,
+        field: 'date_purchased',
+      },
+      deleted: {
+        type: DataTypes.BOOLEAN,
       },
     },
     {
