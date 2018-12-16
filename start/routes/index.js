@@ -9,8 +9,10 @@ router.get('/api', (req, res) => {
 router.get('/api/categories', categoryController.fetchCategories)
 router.get('/api/categories/:id', categoryController.getProductByCategory)
 router.get('/api/products', productController.fetchProducts)
-router.post('/api/products', productController.createProduct)
+router.get('/api/products/:id', productController.getProduct)
+router.get('/api/products/:id', productController.getProduct)
 router.post('/api/categories', categoryController.createCategory)
 router.put('/api/products/:id', productController.updateProduct)
+router.delete('/api/products/:id', productController.deleteProduct)
 
 module.exports = router

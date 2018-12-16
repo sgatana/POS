@@ -7,7 +7,7 @@ class categoryController {
       await categoryRepository.createCategory(category)
       res.status(201).send({ message: 'category added successfully' })
     } catch (error) {
-      res.status(error.status).json({ error: error.message })
+      res.status(error.code).json({ error: error.message })
     }
   }
 
