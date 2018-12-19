@@ -36,6 +36,10 @@ module.exports = {
         type: Sequelize.DATE,
         field: 'updated_at',
       },
+      deleted: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
     }),
   down: queryInterface => queryInterface.dropTable('products'),
 }

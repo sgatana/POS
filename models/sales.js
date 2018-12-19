@@ -2,11 +2,6 @@ module.exports = (sequelize, DataTypes) => {
   const sales = sequelize.define(
     'sales',
     {
-      id: {
-        unique: true,
-        type: DataTypes.STRING,
-        primaryKey: true,
-      },
       productId: {
         type: DataTypes.STRING,
         field: 'product_id',
@@ -22,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         field: 'total_cost',
       },
-      createAt: {
+      createdAt: {
         type: DataTypes.DATE,
         field: 'created_at',
       },
@@ -36,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       deleted: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
     },
     {
@@ -45,5 +41,6 @@ module.exports = (sequelize, DataTypes) => {
   // sales.associate = function(models) {
   //   // associations can be defined here
   // }
+  sales.removeAttribute('id')
   return sales
 }

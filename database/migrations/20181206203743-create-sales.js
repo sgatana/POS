@@ -1,11 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('sales', {
-      id: {
-        primaryKey: true,
-        unique: true,
-        type: Sequelize.STRING,
-      },
       productId: {
         type: Sequelize.STRING,
         field: 'product_id',
@@ -36,6 +31,10 @@ module.exports = {
       dateSold: {
         type: Sequelize.DATE,
         field: 'date_sold',
+      },
+      deleted: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
     }),
   down: queryInterface => queryInterface.dropTable('sales'),

@@ -6,7 +6,7 @@ const development = {
   database: process.env.POS_DEVDB,
   host: '127.0.0.1',
   dialect: 'postgres',
-  logging: false,
+  // logging: false,
 }
 const test = {
   username: 'gatana',

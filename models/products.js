@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       deleted: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
     },
     {
