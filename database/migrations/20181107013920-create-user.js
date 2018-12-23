@@ -6,13 +6,12 @@ module.exports = {
         primaryKey: true,
         unique: true,
       },
-      firstName: {
+      userName: {
         type: Sequelize.STRING,
-        field: 'first_name',
+        field: 'username',
       },
-      lastName: {
+      password: {
         type: Sequelize.STRING,
-        field: 'last_name',
       },
       createdAt: {
         type: Sequelize.DATE,

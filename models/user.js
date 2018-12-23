@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       userName: {
         type: DataTypes.STRING,
-        field: 'first_name',
+        field: 'username',
       },
       password: {
         type: DataTypes.STRING,
-        field: 'first_name',
+        field: 'password',
       },
       createdAt: {
         type: DataTypes.DATE,

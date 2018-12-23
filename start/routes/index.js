@@ -3,6 +3,7 @@ const categoryController = require('../../controllers/categoryContoller')
 const productController = require('../../controllers/productController')
 const PurchaseController = require('../../controllers/purchaseController')
 const salesController = require('../../controllers/salesController')
+const userController = require('../../controllers/userController')
 
 const router = express.Router()
 router.get('/api', (req, res) => {
@@ -17,6 +18,8 @@ router.get('/api/sales', salesController.listSales)
 router.post('/api/products', productController.createProduct)
 router.post('/api/purchases', PurchaseController.createPurchases)
 router.post('/api/categories', categoryController.createCategory)
+router.post('/api/user', userController.createUser)
+router.post('/api/user/login', userController.userLogin)
 router.put('/api/products/:id', productController.updateProduct)
 router.delete('/api/products/:id', productController.deleteProduct)
 
