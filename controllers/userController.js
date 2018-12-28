@@ -16,14 +16,13 @@ class userController {
     try {
       const userData = req.body
       const user = await userRepository.userLogin(userData)
-      req.user = user.userName
       const authToken = await generaToken(user)
-      res.json({
+      res.status(200).json({
         message: `you have successfully logged in`,
         authToken,
       })
     } catch (error) {
-      res.json({ error: error.message })
+      res.status(error.status).json({ error: error.message })
     }
   }
 }
